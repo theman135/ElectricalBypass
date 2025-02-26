@@ -101,13 +101,13 @@ body {
   background-color: rgba(0, 0, 0, 0.5);
   position: fixed;
   bottom: 0;
-  color: #DA70D6;
+  color: #fafa00;
   backdrop-filter: blur(10px);
 }
 
 .footer a,
 .footer a:visited {
-  color: #DA70D6;
+  color: #fafa00;
   font-size: 16px;
   text-decoration: none;
   text-underline-offset: 2.5px;
@@ -116,7 +116,7 @@ body {
 
 .footer a:hover {
   text-decoration: underline;
-  color: #DA70D6;
+  color: #fafa00;
 }
 
 .footer div {
@@ -131,7 +131,7 @@ body {
   width: 100%;
   background-color: rgba(0, 0, 0, 0.8);
   backdrop-filter: blur(10px);
-  color: #DA70D6;
+  color: #fafa00;
   z-index: 1000;
   padding: 10px 0;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
@@ -140,7 +140,7 @@ body {
 .navbar a {
   float: left;
   display: block;
-  color: #DA70D6;
+  color: #fafa00;
   text-align: center;
   padding: 14px 20px;
   text-decoration: none;
@@ -148,7 +148,7 @@ body {
 }
 
 .navbar a:hover {
-  background-color: #DA70D6;
+  background-color: #fafa00;
   color: black;
 }
 
@@ -156,7 +156,7 @@ body {
 .button {
   background-color: rgba(0, 0, 0, 0.7);
   border: none;
-  color: #DA70D6;
+  color: #fafa00;
   padding: 16px 36px;
   text-align: center;
   text-decoration: none;
