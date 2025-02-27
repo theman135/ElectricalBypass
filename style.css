@@ -155,7 +155,7 @@ body {
 /* Button Styles */
 .button {
   background-color: rgba(0, 0, 0, 0.7);
-  border: none;
+  border: rgba(255, 255, 0, 0);
   color: #fafa00;
   padding: 16px 36px;
   text-align: center;
