@@ -6,7 +6,7 @@ body {
   padding: 0;
   height: 100vh;
   width: 100vw;
-  background-image: url('https://wallpapersok.com/images/hd/a-yellow-and-black-halftone-background-i6ubfff0un2hxnqy.jpg');
+  background-image: url('');
   background-size: cover;
   background-attachment: fixed;
   background-repeat: no-repeat;
@@ -37,7 +37,7 @@ body {
   display: flex;
   align-items: center;
   gap: 14px;
-  color: #DA70D6;
+  color: #FFFF00;
   text-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
 }
 
