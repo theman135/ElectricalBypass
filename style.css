@@ -1,78 +1,63 @@
-/* Global Styles */
-body {
-  background-color: #1e1e1e;
-  color: #f4f4f4;
+/* Some styling to make it look good */
+
+* {
   margin: 0;
   padding: 0;
+}
+
+body {
+  background-color: #151515;
+  color: white;
   height: 100vh;
   width: 100vw;
-  background-image: url('');
-  background-size: cover;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-  font-family: 'Poppins', Arial, Helvetica, sans-serif;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  font-family: 'IBM Plex Sans';
 }
 
 .container {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+
+  text-align: center;
+
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 20px;
-  backdrop-filter: blur(15px);
-  background-color: rgba(0, 0, 0, 0.6);
-  padding: 30px;
-  border-radius: 25px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
-  text-align: center;
-  width: min(90%, 500px);
+
+  gap: 18px;
 }
 
 .header {
-  font-size: 48px;
-  font-weight: 600;
+  font-size: 42px;
   display: flex;
   align-items: center;
-  gap: 14px;
-  color: #FFFF00;
-  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+  gap: 12px;
 }
 
 .icon {
-  height: 48px;
-  width: 48px;
+  height: 42px;
+  width: 42px;
 }
 
 .description {
-  font-size: 18px;
-  color: #d1d1d1;
-  line-height: 1.6;
+  font-size: 16px;
+  color: #afafaf;
 }
 
 .input {
   width: 100%;
-  max-width: 450px;
   background-color: transparent;
-  border: 2px solid rgb(100, 100, 100);
-  font-size: 16px;
-  padding: 14px;
+  border: 1.5px rgb(74, 74, 74) solid;
+  border-radius: 5px;
+  font-size: 14px;
+  padding: 12px;
   text-align: center;
-  color: #f2fa00;
+  color: white;
   outline: none;
-  border-radius: 50px;
-  transition: border-color 200ms, box-shadow 200ms;
-}
 
-.input::placeholder {
-  color: #a1a1a1;
-}
-
-.input:focus {
-  border-color: #f7dc0c;
-  box-shadow: 0 0 10px rgba(104, 93, 255, 0.6);
+  transition: color;
+  transition-duration: 100ms;
 }
 
 .input:disabled {
@@ -80,95 +65,47 @@ body {
 }
 
 .logo {
-  height: 60px;
-  width: 60px;
+  height: 55px;
+  width: 55px;
+  /* padding: 1.5em; */
   will-change: filter;
   transition: filter 300ms;
 }
 
 .logo:hover {
-  filter: drop-shadow(0 0 30px #685dff);
+  filter: drop-shadow(0 0 24px #685dff);
 }
 
-/* Footer */
 .footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px;
-  width: 100%;
   box-sizing: border-box;
-  background-color: rgba(0, 0, 0, 0.5);
-  position: fixed;
-  bottom: 0;
-  color: #fafa00;
-  backdrop-filter: blur(10px);
+
+  flex-shrink: 0;
+
+  padding: 18px;
+  padding-left: 24px;
+  padding-right: 30px;
 }
 
 .footer a,
 .footer a:visited {
-  color: #fafa00;
+  cursor: pointer;
+  color: white;
   font-size: 16px;
   text-decoration: none;
   text-underline-offset: 2.5px;
-  transition: color 200ms, text-decoration 200ms;
 }
 
 .footer a:hover {
   text-decoration: underline;
-  color: #fafa00;
 }
 
 .footer div {
   display: flex;
-  gap: 30px;
-}
-
-/* Navbar */
-.navbar {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  background-color: rgba(0, 0, 0, 0.8);
-  backdrop-filter: blur(10px);
-  color: #fafa00;
-  z-index: 1000;
-  padding: 10px 0;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
-}
-
-.navbar a {
-  float: left;
-  display: block;
-  color: #fafa00;
-  text-align: center;
-  padding: 14px 20px;
-  text-decoration: none;
-  transition: background-color 300ms, color 300ms;
-}
-
-.navbar a:hover {
-  background-color: #fafa00;
-  color: black;
-}
-
-/* Button Styles */
-.button {
-  background-color: rgba(0, 0, 0, 0.7);
-  border: rgba(255, 255, 0, 0);
-  color: #fafa00;
-  padding: 16px 36px;
-  text-align: center;
-  text-decoration: none;
-  font-size: 18px;
-  margin: 5px 3px;
-  cursor: pointer;
-  border-radius: 50px;
-  transition: background-color 300ms, color 300ms, transform 200ms;
-}
-
-.button:hover {
-  background-color: #ffffff;
-  color: black;
-  transform: scale(1.05);
+  gap: 26px;
 }
