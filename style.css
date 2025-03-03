@@ -311,11 +311,12 @@ iframe#game-frame {
 
 /* Full-Screen Button */
 .fullscreen-button {
+  display: none;
   position: absolute;
   bottom: 10px;
   right: 10px;
-  background-color: #fafa00;
-  color: black;
+  background-color: red;
+  color: white;
   padding: 10px 15px;
   border: none;
   border-radius: 8px;
@@ -325,5 +326,5 @@ iframe#game-frame {
 }
 
 .fullscreen-button:hover {
-  background-color: #ffcc00;
+  background-color: darkred;
 }
