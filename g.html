@@ -5,24 +5,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Games - ElectricalBypass</title>
   
-  <!-- Favicon & Styles -->
   <link rel="shortcut icon" href="assets/img/static.png" type="image/x-icon">
   <link rel="stylesheet" href="/style.css">
   
   <script>
     function loadGame(url) {
-      document.getElementById("game-frame").src = "proxy.html?game=" + encodeURIComponent(url);
+      let proxyURL = "/uv/service/" + btoa(url); // Ultraviolet Proxy Path
+      document.getElementById("game-frame").src = proxyURL;
     }
 
     function toggleFullScreen() {
       let iframe = document.getElementById("game-frame");
       if (iframe.requestFullscreen) {
         iframe.requestFullscreen();
-      } else if (iframe.mozRequestFullScreen) { /* Firefox */
+      } else if (iframe.mozRequestFullScreen) { 
         iframe.mozRequestFullScreen();
-      } else if (iframe.webkitRequestFullscreen) { /* Chrome, Safari & Opera */
+      } else if (iframe.webkitRequestFullscreen) { 
         iframe.webkitRequestFullscreen();
-      } else if (iframe.msRequestFullscreen) { /* IE/Edge */
+      } else if (iframe.msRequestFullscreen) { 
         iframe.msRequestFullscreen();
       }
     }
@@ -30,14 +30,12 @@
 </head>
 <body>
 
-  <!-- Navigation Bar -->
   <div class="navbar">
     <a href="/index.html" class="button">Home</a>
     <a href="/a.html" class="button">Apps</a>
     <a href="/s.html" class="button">Settings</a>
   </div>
 
-  <!-- Games Section -->
   <div class="container">
     <h1 class="header">🎮 Popular Games 🎮</h1>
     
@@ -53,7 +51,6 @@
       <button onclick="loadGame('https://2048game.com/')" class="game-card">2048</button>
     </div>
 
-    <!-- Game Display Area -->
     <div class="game-container">
       <iframe id="game-frame" src="" frameborder="0"></iframe>
       <button class="fullscreen-button" onclick="toggleFullScreen()">🔲 Full Screen</button>
