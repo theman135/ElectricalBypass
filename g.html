@@ -11,7 +11,7 @@
   
   <script>
     function loadGame(url) {
-      document.getElementById("game-frame").src = url;
+      document.getElementById("game-frame").src = "proxy.html?game=" + encodeURIComponent(url);
     }
 
     function toggleFullScreen() {
@@ -62,3 +62,4 @@
 
 </body>
 </html>
+
