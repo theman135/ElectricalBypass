@@ -13,6 +13,19 @@
     function loadGame(url) {
       document.getElementById("game-frame").src = url;
     }
+
+    function toggleFullScreen() {
+      let iframe = document.getElementById("game-frame");
+      if (iframe.requestFullscreen) {
+        iframe.requestFullscreen();
+      } else if (iframe.mozRequestFullScreen) { /* Firefox */
+        iframe.mozRequestFullScreen();
+      } else if (iframe.webkitRequestFullscreen) { /* Chrome, Safari & Opera */
+        iframe.webkitRequestFullscreen();
+      } else if (iframe.msRequestFullscreen) { /* IE/Edge */
+        iframe.msRequestFullscreen();
+      }
+    }
   </script>
 </head>
 <body>
@@ -43,6 +56,7 @@
     <!-- Game Display Area -->
     <div class="game-container">
       <iframe id="game-frame" src="" frameborder="0"></iframe>
+      <button class="fullscreen-button" onclick="toggleFullScreen()">🔲 Full Screen</button>
     </div>
   </div>
 
