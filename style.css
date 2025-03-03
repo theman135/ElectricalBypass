@@ -225,10 +225,29 @@ body {
   font-size: 18px;
   text-align: center;
   transition: background 0.3s ease, transform 0.2s ease;
+  cursor: pointer;
+  border: none;
 }
 
 .game-card:hover {
   background-color: #fafa00;
   color: black;
   transform: scale(1.05);
+}
+
+/* Game Display Area */
+.game-container {
+  width: 100%;
+  max-width: 900px;
+  height: 500px;
+  margin-top: 20px;
+  border-radius: 10px;
+  overflow: hidden;
+  background: black;
+}
+
+iframe#game-frame {
+  width: 100%;
+  height: 100%;
+  border: none;
 }
