@@ -8,7 +8,12 @@
   <!-- Favicon & Styles -->
   <link rel="shortcut icon" href="assets/img/static.png" type="image/x-icon">
   <link rel="stylesheet" href="/style.css">
-
+  
+  <script>
+    function loadGame(url) {
+      document.getElementById("game-frame").src = url;
+    }
+  </script>
 </head>
 <body>
 
@@ -24,15 +29,20 @@
     <h1 class="header">🎮 Popular Games 🎮</h1>
     
     <div class="game-list">
-      <a href="https://www.crazygames.com/game/krunker-io" target="_blank" class="game-card">Krunker.io</a>
-      <a href="https://agar.io" target="_blank" class="game-card">Agar.io</a>
-      <a href="https://slither.io" target="_blank" class="game-card">Slither.io</a>
-      <a href="https://shellshock.io" target="_blank" class="game-card">Shell Shockers</a>
-      <a href="https://www.slopegame.com/" target="_blank" class="game-card">Slope</a>
-      <a href="https://1v1.lol/" target="_blank" class="game-card">1v1.LOL</a>
-      <a href="https://tetris.com/play-tetris" target="_blank" class="game-card">Tetris</a>
-      <a href="https://www.crazygames.com/game/moto-x3m" target="_blank" class="game-card">Moto X3M</a>
-      <a href="https://2048game.com/" target="_blank" class="game-card">2048</a>
+      <button onclick="loadGame('https://www.crazygames.com/embed/krunker-io')" class="game-card">Krunker.io</button>
+      <button onclick="loadGame('https://agar.io/')" class="game-card">Agar.io</button>
+      <button onclick="loadGame('https://slither.io/')" class="game-card">Slither.io</button>
+      <button onclick="loadGame('https://shellshock.io/')" class="game-card">Shell Shockers</button>
+      <button onclick="loadGame('https://www.slopegame.com/')" class="game-card">Slope</button>
+      <button onclick="loadGame('https://1v1.lol/')" class="game-card">1v1.LOL</button>
+      <button onclick="loadGame('https://tetris.com/play-tetris')" class="game-card">Tetris</button>
+      <button onclick="loadGame('https://www.crazygames.com/embed/moto-x3m')" class="game-card">Moto X3M</button>
+      <button onclick="loadGame('https://2048game.com/')" class="game-card">2048</button>
+    </div>
+
+    <!-- Game Display Area -->
+    <div class="game-container">
+      <iframe id="game-frame" src="" frameborder="0"></iframe>
     </div>
   </div>
 
