@@ -24,13 +24,6 @@
         localStorage.setItem("volume", this.value);
       });
 
-      // Background Selection
-      document.getElementById("bg-select").addEventListener("change", function () {
-        let bg = this.value;
-        document.body.style.backgroundImage = `url('${bg}')`;
-        localStorage.setItem("background", bg);
-      });
-
       // Custom Background Upload
       document.getElementById("bg-upload").addEventListener("change", function (event) {
         let file = event.target.files[0];
@@ -44,18 +37,18 @@
         }
       });
 
-      // Save Panic Button URL on Input Change
+      // Save Panic Button URL
       document.getElementById("panic-url").addEventListener("input", function () {
         let url = this.value.trim();
         if (url && !url.startsWith("http")) {
-          url = "https://" + url; // Ensure valid URL format
+          url = "https://" + url;
         }
         localStorage.setItem("panicURL", url);
       });
 
       // Panic Button Redirect
       document.getElementById("panic-button").addEventListener("click", function () {
-        let panicURL = localStorage.getItem("panicURL") || "https://google.com"; // Default to Google
+        let panicURL = localStorage.getItem("panicURL") || "https://google.com";
         window.location.href = panicURL;
       });
 
@@ -67,7 +60,7 @@
     });
 
     function loadSettings() {
-      // Apply theme to the entire site
+      // Apply saved theme
       let theme = localStorage.getItem("theme") || "default";
       document.documentElement.setAttribute("data-theme", theme);
       document.getElementById("theme-select").value = theme;
@@ -76,13 +69,13 @@
       let volume = localStorage.getItem("volume") || 50;
       document.getElementById("volume").value = volume;
 
-      // Load and apply background
+      // Load and apply uploaded background
       let background = localStorage.getItem("background");
       if (background) {
         document.body.style.backgroundImage = `url('${background}')`;
       }
 
-      // Load and display panic button URL
+      // Load Panic Button URL
       let panicURL = localStorage.getItem("panicURL") || "";
       document.getElementById("panic-url").value = panicURL;
     }
@@ -118,16 +111,6 @@
     </div>
 
     <div class="setting">
-      <label>🖼 Background:</label>
-      <select id="bg-select">
-        <option value="">Default</option>
-        <option value="https://source.unsplash.com/random/1920x1080?nature">Nature</option>
-        <option value="https://source.unsplash.com/random/1920x1080?space">Space</option>
-        <option value="https://source.unsplash.com/random/1920x1080?tech">Tech</option>
-      </select>
-    </div>
-
-    <div class="setting">
       <label>📂 Upload Custom Background:</label>
       <input type="file" id="bg-upload" accept="image/*">
     </div>
@@ -143,5 +126,6 @@
 
 </body>
 </html>
+
 
           
