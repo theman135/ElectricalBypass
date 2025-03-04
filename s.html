@@ -1,23 +1,114 @@
 <!DOCTYPE html>
-<html lang="en"></html>
+<html lang="en">
 <head>
-    <link rel="shortcut icon" href="assets/img/static.png" type="image/x-icon"> 
-    <link rel="icon" href="/assets/img/chitchat.png" type="image/x-icon">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
-    
-    <title>ElectricalBypass</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Settings - ElectricalBypass</title>
+  
+  <link rel="shortcut icon" href="assets/img/static.png" type="image/x-icon">
+  <link rel="stylesheet" href="/style.css">
+  
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      // Load saved settings
+      loadSettings();
+
+      // Theme Toggle
+      document.getElementById("theme-toggle").addEventListener("change", function () {
+        document.body.classList.toggle("dark-mode", this.checked);
+        localStorage.setItem("theme", this.checked ? "dark" : "light");
+      });
+
+      // Volume Control
+      document.getElementById("volume").addEventListener("input", function () {
+        let volume = this.value;
+        localStorage.setItem("volume", volume);
+      });
+
+      // Background Selection
+      document.getElementById("bg-select").addEventListener("change", function () {
+        let bg = this.value;
+        document.body.style.backgroundImage = `url('${bg}')`;
+        localStorage.setItem("background", bg);
+      });
+
+      // Custom Background Upload
+      document.getElementById("bg-upload").addEventListener("change", function (event) {
+        let file = event.target.files[0];
+        if (file) {
+          let reader = new FileReader();
+          reader.onload = function (e) {
+            document.body.style.backgroundImage = `url('${e.target.result}')`;
+            localStorage.setItem("background", e.target.result);
+          };
+          reader.readAsDataURL(file);
+        }
+      });
+
+      // Reset Settings
+      document.getElementById("reset-settings").addEventListener("click", function () {
+        localStorage.clear();
+        location.reload();
+      });
+    });
+
+    function loadSettings() {
+      // Load theme
+      let theme = localStorage.getItem("theme");
+      document.body.classList.toggle("dark-mode", theme === "dark");
+      document.getElementById("theme-toggle").checked = theme === "dark";
+
+      // Load volume
+      let volume = localStorage.getItem("volume") || 50;
+      document.getElementById("volume").value = volume;
+
+      // Load background
+      let background = localStorage.getItem("background");
+      if (background) {
+        document.body.style.backgroundImage = `url('${background}')`;
+        document.getElementById("bg-select").value = background;
+      }
+    }
+  </script>
 </head>
 <body>
-    <div class="navbar">
-        <a href="/index.html" class="button">Home</a>
-        <a href="/g.html" class="button">Games</a>
-        <a href="/a.html" class="button">Apps</a>
-        <a href="/s.html" class="button">Settings</a>
-      </div>
+
+  <div class="navbar">
+    <a href="/index.html" class="button">Home</a>
+    <a href="/a.html" class="button">Apps</a>
+    <a href="/g.html" class="button">Games</a>
+  </div>
+
+  <div class="container">
+    <h1 class="header">⚙ Settings ⚙</h1>
+
+    <div class="setting">
+      <label>🌙 Dark Mode:</label>
+      <input type="checkbox" id="theme-toggle">
+    </div>
+
+    <div class="setting">
+      <label>🔊 Volume:</label>
+      <input type="range" id="volume" min="0" max="100" value="50">
+    </div>
+
+    <div class="setting">
+      <label>🖼 Background:</label>
+      <select id="bg-select">
+        <option value="">Default</option>
+        <option value="https://source.unsplash.com/random/1920x1080?nature">Nature</option>
+        <option value="https://source.unsplash.com/random/1920x1080?space">Space</option>
+        <option value="https://source.unsplash.com/random/1920x1080?tech">Tech</option>
+      </select>
+    </div>
+
+    <div class="setting">
+      <label>📂 Upload Custom Background:</label>
+      <input type="file" id="bg-upload" accept="image/*">
+    </div>
+
+    <button id="reset-settings">🔄 Reset Settings</button>
+  </div>
+
 </body>
 </html>
