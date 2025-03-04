@@ -44,9 +44,13 @@
         }
       });
 
-      // Panic Button URL Save
+      // Save Panic Button URL on Input Change
       document.getElementById("panic-url").addEventListener("input", function () {
-        localStorage.setItem("panicURL", this.value);
+        let url = this.value.trim();
+        if (url && !url.startsWith("http")) {
+          url = "https://" + url; // Ensure valid URL format
+        }
+        localStorage.setItem("panicURL", url);
       });
 
       // Panic Button Redirect
@@ -78,7 +82,7 @@
         document.body.style.backgroundImage = `url('${background}')`;
       }
 
-      // Load panic button URL
+      // Load and display panic button URL
       let panicURL = localStorage.getItem("panicURL") || "";
       document.getElementById("panic-url").value = panicURL;
     }
@@ -139,5 +143,5 @@
 
 </body>
 </html>
- 
+
           
