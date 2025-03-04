@@ -4,16 +4,18 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Games - ElectricalBypass</title>
-  
-  <link rel="shortcut icon" href="assets/img/static.png" type="image/x-icon">
-  <link rel="stylesheet" href="/style.css">
-  
-  <script>
-    function loadGame(url) {
-      let iframe = document.getElementById("game-frame");
-      iframe.src = url;
 
-      // Request full screen when game loads
+  <link rel="stylesheet" href="/style.css">
+  <script src="/uv/uv.bundle.js"></script>
+  <script src="/uv/uv.config.js"></script>
+
+  <script>
+    function openGame(url) {
+      let encodedUrl = __uv$config.prefix + __uv$config.encodeUrl(url);
+      let iframe = document.getElementById("game-frame");
+      iframe.src = encodedUrl;
+
+      // Request full-screen mode
       if (iframe.requestFullscreen) {
         iframe.requestFullscreen();
       } else if (iframe.mozRequestFullScreen) {
@@ -24,7 +26,7 @@
         iframe.msRequestFullscreen();
       }
 
-      // Show exit button when moving to the top
+      // Show exit button when moving cursor to the top
       document.addEventListener("mousemove", showExitButton);
     }
 
@@ -39,43 +41,19 @@
         document.msExitFullscreen();
       }
 
-      // Hide exit button when not in fullscreen
+      // Hide exit button
       document.getElementById("exit-fullscreen").style.display = "none";
       document.removeEventListener("mousemove", showExitButton);
     }
 
     function showExitButton(event) {
-      if (event.clientY < 50) { // If mouse is near the top of the page
+      if (event.clientY < 50) { // Show exit button if cursor is at the top
         document.getElementById("exit-fullscreen").style.display = "block";
       } else {
         document.getElementById("exit-fullscreen").style.display = "none";
       }
     }
   </script>
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    let savedTheme = localStorage.getItem("theme") || "default";
-    document.documentElement.setAttribute("data-theme", savedTheme);
-  });
-</script>
-
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    // Load saved theme
-    let savedTheme = localStorage.getItem("theme") || "default";
-    document.documentElement.setAttribute("data-theme", savedTheme);
-
-    // Load uploaded background
-    let savedBackground = localStorage.getItem("background");
-    if (savedBackground) {
-      document.body.style.backgroundImage = `url('${savedBackground}')`;
-    }
-  });
-</script>
-
-
-
-
 </head>
 <body>
 
@@ -86,18 +64,17 @@
   </div>
 
   <div class="container">
-    <h1 class="header">🎮 Popular Games 🎮</h1>
+    <h1 class="header">🎮 Unblocked Games 🎮</h1>
     
     <div class="game-list">
-      <button onclick="loadGame('https://www.crazygames.com/embed/krunker-io')" class="game-card">Krunker.io</button>
-      <button onclick="loadGame('https://agar.io/')" class="game-card">Agar.io</button>
-      <button onclick="loadGame('https://slither.io/')" class="game-card">Slither.io</button>
-      <button onclick="loadGame('https://shellshock.io/')" class="game-card">Shell Shockers</button>
-      <button onclick="loadGame('https://www.slopegame.com/')" class="game-card">Slope</button>
-      <button onclick="loadGame('https://1v1.lol/')" class="game-card">1v1.LOL</button>
-      <button onclick="loadGame('https://tetris.com/play-tetris')" class="game-card">Tetris</button>
-      <button onclick="loadGame('https://www.crazygames.com/embed/moto-x3m')" class="game-card">Moto X3M</button>
-      <button onclick="loadGame('https://2048game.com/')" class="game-card">2048</button>
+      <button onclick="openGame('https://1v1.lol/')" class="game-card">1v1.LOL</button>
+      <button onclick="openGame('https://shellshock.io/')" class="game-card">Shell Shockers</button>
+      <button onclick="openGame('https://krunker.io/')" class="game-card">Krunker.io</button>
+      <button onclick="openGame('https://surviv.io/')" class="game-card">Surviv.io</button>
+      <button onclick="openGame('https://slopegame.io/')" class="game-card">Slope</button>
+      <button onclick="openGame('https://agar.io/')" class="game-card">Agar.io</button>
+      <button onclick="openGame('https://paper.io/')" class="game-card">Paper.io</button>
+      <button onclick="openGame('https://zombs.io/')" class="game-card">Zombs.io</button>
     </div>
 
     <div class="game-container">
@@ -108,4 +85,5 @@
 
 </body>
 </html>
+
 
