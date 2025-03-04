@@ -445,8 +445,48 @@ body {
 
 /* Container */
 .container {
- 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  backdrop-filter: blur(15px);
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 30px;
+  border-radius: 25px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+  text-align: center;
+  width: min(90%, 500px);
+}
 
+/* Header */
+.header {
+  font-size: 48px;
+  font-weight: 600;
+  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+}
+
+/* Settings Sections */
+.setting {
+  margin: 15px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 400px;
+}
+
+.setting label {
+  font-size: 18px;
+}
+
+.setting input, .setting select {
+  padding: 8px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  background-color: var(--button-bg);
+  color: var(--text-color);
+}
 
 /* Reset Button */
 #reset-settings {
