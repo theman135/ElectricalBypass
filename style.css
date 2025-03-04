@@ -147,14 +147,15 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #fafa00;
+  color: var(--button-text) !important;  /* Now follows the theme */
   text-align: center;
   padding: 12px 18px;
   text-decoration: none;
   transition: background-color 300ms, color 300ms;
   border-radius: 10px;
-  background-color: #3b3b3b; /* Slightly lighter gray */
+  background-color: var(--button-bg);
 }
+
 
 .navbar a:hover {
   background-color: #fafa00;
