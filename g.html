@@ -59,6 +59,21 @@
   });
 </script>
 
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    // Load saved theme
+    let savedTheme = localStorage.getItem("theme") || "default";
+    document.documentElement.setAttribute("data-theme", savedTheme);
+
+    // Load saved background
+    let savedBackground = localStorage.getItem("background");
+    if (savedBackground) {
+      document.body.style.backgroundImage = `url('${savedBackground}')`;
+    }
+  });
+</script>
+
+
 
 </head>
 <body>
