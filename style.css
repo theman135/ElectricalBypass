@@ -350,3 +350,55 @@ iframe#game-frame {
 .fullscreen-button:hover {
   background-color: darkred;
 }
+
+/* Settings Page */
+.setting {
+  margin: 15px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 400px;
+}
+
+.setting label {
+  font-size: 18px;
+}
+
+.setting input, .setting select {
+  padding: 8px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+/* Dark Mode */
+.dark-mode {
+  background-color: #121212;
+  color: white;
+}
+
+.dark-mode .container {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.dark-mode select, .dark-mode input {
+  background-color: #333;
+  color: white;
+}
+
+/* Reset Button */
+#reset-settings {
+  margin-top: 20px;
+  padding: 10px 15px;
+  font-size: 16px;
+  background-color: red;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+#reset-settings:hover {
+  background-color: darkred;
+}
