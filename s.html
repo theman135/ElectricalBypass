@@ -44,6 +44,17 @@
         }
       });
 
+      // Panic Button URL Save
+      document.getElementById("panic-url").addEventListener("input", function () {
+        localStorage.setItem("panicURL", this.value);
+      });
+
+      // Panic Button Redirect
+      document.getElementById("panic-button").addEventListener("click", function () {
+        let panicURL = localStorage.getItem("panicURL") || "https://google.com"; // Default to Google
+        window.location.href = panicURL;
+      });
+
       // Reset Settings
       document.getElementById("reset-settings").addEventListener("click", function () {
         localStorage.clear();
@@ -61,12 +72,15 @@
       let volume = localStorage.getItem("volume") || 50;
       document.getElementById("volume").value = volume;
 
-      // Load background
+      // Load and apply background
       let background = localStorage.getItem("background");
       if (background) {
         document.body.style.backgroundImage = `url('${background}')`;
-        document.getElementById("bg-select").value = background;
       }
+
+      // Load panic button URL
+      let panicURL = localStorage.getItem("panicURL") || "";
+      document.getElementById("panic-url").value = panicURL;
     }
   </script>
 </head>
@@ -88,6 +102,9 @@
         <option value="cyber">Cyber</option>
         <option value="solarized">Solarized</option>
         <option value="ocean">Ocean</option>
+        <option value="midnight">Midnight</option>
+        <option value="forest">Forest</option>
+        <option value="retro">Retro</option>
       </select>
     </div>
 
@@ -111,10 +128,16 @@
       <input type="file" id="bg-upload" accept="image/*">
     </div>
 
+    <div class="setting">
+      <label>🚨 Panic Button URL:</label>
+      <input type="text" id="panic-url" placeholder="Enter a URL for Panic Button">
+    </div>
+
+    <button id="panic-button" class="panic-button">🚨 Panic Button</button>
     <button id="reset-settings">🔄 Reset Settings</button>
   </div>
 
 </body>
 </html>
-
+ 
           
