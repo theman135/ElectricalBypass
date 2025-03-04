@@ -65,13 +65,14 @@
     let savedTheme = localStorage.getItem("theme") || "default";
     document.documentElement.setAttribute("data-theme", savedTheme);
 
-    // Load saved background
+    // Load uploaded background
     let savedBackground = localStorage.getItem("background");
     if (savedBackground) {
       document.body.style.backgroundImage = `url('${savedBackground}')`;
     }
   });
 </script>
+
 
 
 
