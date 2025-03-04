@@ -258,6 +258,114 @@ iframe#game-frame {
   display: none;
   position: fixed;
   top: 5px;
+/* Global Styles */
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  width: 100vw;
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  font-family: 'Poppins', Arial, Helvetica, sans-serif;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Container */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  backdrop-filter: blur(15px);
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 30px;
+  border-radius: 25px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+  text-align: center;
+  width: min(90%, 500px);
+}
+
+/* Apply Theme to Header */
+.header {
+  color: var(--header-color) !important;
+  font-size: 48px;
+  font-weight: 600;
+  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+  text-align: center;
+}
+
+/* Apply Theme to Buttons */
+.button, .app-card, .game-card {
+  background-color: var(--button-bg);
+  color: var(--button-text) !important; /* Ensures button text follows theme */
+  padding: 12px 18px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-size: 18px;
+  text-align: center;
+  transition: background 0.3s ease, transform 0.2s ease;
+  cursor: pointer;
+  border: none;
+}
+
+.button:hover, .app-card:hover, .game-card:hover {
+  background-color: var(--button-hover);
+  transform: scale(1.05);
+}
+
+/* Navbar */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(10px);
+  padding: 10px 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Games Page Styles */
+.game-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.game-card {
+  background-color: var(--button-bg);
+  color: var(--button-text);
+  padding: 12px 20px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-size: 18px;
+  text-align: center;
+  transition: background 0.3s ease, transform 0.2s ease;
+  cursor: pointer;
+  border: none;
+}
+
+.game-card:hover {
+  background-color: var(--button-hover);
+  color: black;
+  transform: scale(1.05);
+}
+
+/* Full-Screen Exit Button */
+.fullscreen-button {
+  display: none;
+  position: fixed;
+  top: 5px;
   left: 50%;
   transform: translateX(-50%);
   background-color: red;
@@ -274,7 +382,6 @@ iframe#game-frame {
 .fullscreen-button:hover {
   background-color: darkred;
 }
-
 
 /* Settings Page */
 .setting {
@@ -297,7 +404,35 @@ iframe#game-frame {
   border: 1px solid #ccc;
 }
 
-/* Default Theme */
+/* Apps Page Styles */
+.app-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.app-card {
+  background-color: var(--button-bg);
+  color: var(--button-text);
+  padding: 12px 20px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-size: 18px;
+  text-align: center;
+  transition: background 0.3s ease, transform 0.2s ease;
+  cursor: pointer;
+  border: none;
+}
+
+.app-card:hover {
+  background-color: var(--button-hover);
+  color: black;
+  transform: scale(1.05);
+}
+
+/* Theme Variables */
 :root {
   --background-color: #1e1e1e;
   --text-color: #f4f4f4;
@@ -365,124 +500,4 @@ iframe#game-frame {
   --button-hover: #ff0033;
   --button-text: black;
   --header-color: #ff0033;
-}
-
-/* Apply Theme Variables */
-body {
-  background-color: var(--background-color);
-  color: var(--text-color);
-}
-
-/* Apply Theme to Header */
-.header {
-  color: var(--header-color);
-  font-size: 48px;
-  font-weight: 600;
-  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
-  text-align: center;
-}
-
-/* Apply Theme to Buttons */
-.button, .app-card, .game-card {
-  background-color: var(--button-bg);
-  color: var(--button-text);
-  padding: 12px 18px;
-  border-radius: 10px;
-  text-decoration: none;
-  font-size: 18px;
-  text-align: center;
-  transition: background 0.3s ease, transform 0.2s ease;
-  cursor: pointer;
-  border: none;
-}
-
-.button:hover, .app-card:hover, .game-card:hover {
-  background-color: var(--button-hover);
-  transform: scale(1.05);
-}
-
-
-
-/* Panic Button */
-.panic-button {
-  margin-top: 20px;
-  padding: 10px 15px;
-  font-size: 16px;
-  background-color: red;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-}
-
-.panic-button:hover {
-  background-color: darkred;
-}
-
-/* Apps Page Styles */
-.app-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 15px;
-  justify-content: center;
-  margin-top: 20px;
-}
-
-.app-card {
-  background-color: #3b3b3b;
-  color: white;
-  padding: 12px 20px;
-  border-radius: 10px;
-  text-decoration: none;
-  font-size: 18px;
-  text-align: center;
-  transition: background 0.3s ease, transform 0.2s ease;
-  cursor: pointer;
-  border: none;
-}
-
-.app-card:hover {
-  background-color: #fafa00;
-  color: black;
-  transform: scale(1.05);
-}
-
-/* App Display Area */
-.app-container {
-  width: 100%;
-  max-width: 900px;
-  height: 500px;
-  margin-top: 20px;
-  border-radius: 10px;
-  overflow: hidden;
-  background: black;
-  position: relative;
-}
-
-iframe#app-frame {
-  width: 100%;
-  height: 100%;
-  border: none;
-}
-
-/* Full-Screen Exit Button */
-.fullscreen-button {
-  display: none;
-  position: fixed;
-  top: 5px;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: red;
-  color: white;
-  padding: 10px 15px;
-  border: none;
-  border-radius: 8px;
-  font-size: 16px;
-  cursor: pointer;
-  transition: background 0.3s ease;
-  z-index: 9999;
-}
-
-.fullscreen-button:hover {
-  background-color: darkred;
 }
