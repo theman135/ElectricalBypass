@@ -298,12 +298,12 @@ iframe#game-frame {
 }
 
 /* Default Theme */
-/* Default Theme */
 :root {
   --background-color: #1e1e1e;
   --text-color: #f4f4f4;
   --button-bg: #3b3b3b;
   --button-hover: #555;
+  --button-text: white;
   --header-color: #FFFF00;
 }
 
@@ -313,7 +313,8 @@ iframe#game-frame {
   --text-color: cyan;
   --button-bg: #00ffea;
   --button-hover: #00ccbb;
-  --header-color: #00ffff; /* Bright cyan header */
+  --button-text: black;
+  --header-color: #00ffff;
 }
 
 /* Solarized Theme */
@@ -322,7 +323,8 @@ iframe#game-frame {
   --text-color: #657b83;
   --button-bg: #b58900;
   --button-hover: #cb4b16;
-  --header-color: #b58900; /* Warm orange header */
+  --button-text: white;
+  --header-color: #b58900;
 }
 
 /* Ocean Theme */
@@ -331,7 +333,8 @@ iframe#game-frame {
   --text-color: #a0cfff;
   --button-bg: #007acc;
   --button-hover: #005f99;
-  --header-color: #00aaff; /* Deep ocean blue header */
+  --button-text: white;
+  --header-color: #00aaff;
 }
 
 /* Midnight Theme */
@@ -340,7 +343,8 @@ iframe#game-frame {
   --text-color: #bb86fc;
   --button-bg: #3700b3;
   --button-hover: #6200ea;
-  --header-color: #bb86fc; /* Purple neon header */
+  --button-text: white;
+  --header-color: #bb86fc;
 }
 
 /* Forest Theme */
@@ -349,7 +353,8 @@ iframe#game-frame {
   --text-color: #d4e157;
   --button-bg: #558b2f;
   --button-hover: #76ff03;
-  --header-color: #76ff03; /* Bright green header */
+  --button-text: black;
+  --header-color: #76ff03;
 }
 
 /* Retro Theme */
@@ -358,7 +363,8 @@ iframe#game-frame {
   --text-color: #ff3366;
   --button-bg: #ff6600;
   --button-hover: #ff0033;
-  --header-color: #ff0033; /* Neon red header */
+  --button-text: black;
+  --header-color: #ff0033;
 }
 
 /* Apply Theme Variables */
@@ -375,6 +381,26 @@ body {
   text-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
   text-align: center;
 }
+
+/* Apply Theme to Buttons */
+.button, .app-card, .game-card {
+  background-color: var(--button-bg);
+  color: var(--button-text);
+  padding: 12px 18px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-size: 18px;
+  text-align: center;
+  transition: background 0.3s ease, transform 0.2s ease;
+  cursor: pointer;
+  border: none;
+}
+
+.button:hover, .app-card:hover, .game-card:hover {
+  background-color: var(--button-hover);
+  transform: scale(1.05);
+}
+
 
 
 /* Panic Button */
