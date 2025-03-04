@@ -235,62 +235,6 @@ body {
   transform: scale(1.05);
 }
 
-/* Games Page Styles */
-.game-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 15px;
-  justify-content: center;
-  margin-top: 20px;
-}
-
-.game-card {
-  background-color: #3b3b3b;
-  color: white;
-  padding: 12px 20px;
-  border-radius: 10px;
-  text-decoration: none;
-  font-size: 18px;
-  text-align: center;
-  transition: background 0.3s ease, transform 0.2s ease;
-  cursor: pointer;
-  border: none;
-}
-
-.game-card:hover {
-  background-color: #fafa00;
-  color: black;
-  transform: scale(1.05);
-}
-
-/* Games Page Styles */
-.game-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 15px;
-  justify-content: center;
-  margin-top: 20px;
-}
-
-.game-card {
-  background-color: #3b3b3b;
-  color: white;
-  padding: 12px 20px;
-  border-radius: 10px;
-  text-decoration: none;
-  font-size: 18px;
-  text-align: center;
-  transition: background 0.3s ease, transform 0.2s ease;
-  cursor: pointer;
-  border: none;
-}
-
-.game-card:hover {
-  background-color: #fafa00;
-  color: black;
-  transform: scale(1.05);
-}
-
 /* Game Display Area */
 .game-container {
   width: 100%;
@@ -309,29 +253,9 @@ iframe#game-frame {
   border: none;
 }
 
-/* Full-Screen Button */
+/* Full-Screen Exit Button */
 .fullscreen-button {
   display: none;
-  position: absolute;
-  bottom: 10px;
-  right: 10px;
-  background-color: red;
-  color: white;
-  padding: 10px 15px;
-  border: none;
-  border-radius: 8px;
-  font-size: 16px;
-  cursor: pointer;
-  transition: background 0.3s ease;
-}
-
-.fullscreen-button:hover {
-  background-color: darkred;
-}
-
-/* Exit Full Screen Button */
-.fullscreen-button {
-  display: none; /* Hidden by default */
   position: fixed;
   top: 5px;
   left: 50%;
@@ -350,6 +274,7 @@ iframe#game-frame {
 .fullscreen-button:hover {
   background-color: darkred;
 }
+
 
 /* Settings Page */
 .setting {
