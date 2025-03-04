@@ -10,24 +10,31 @@
   <script src="/uv/uv.config.js"></script>
 
   <script>
-    function openApp(url) {
+    function openApp(url, newTab = false) {
       let encodedUrl = __uv$config.prefix + __uv$config.encodeUrl(url);
-      let iframe = document.getElementById("app-frame");
-      iframe.src = encodedUrl;
 
-      // Request full screen
-      if (iframe.requestFullscreen) {
-        iframe.requestFullscreen();
-      } else if (iframe.mozRequestFullScreen) {
-        iframe.mozRequestFullScreen();
-      } else if (iframe.webkitRequestFullscreen) {
-        iframe.webkitRequestFullscreen();
-      } else if (iframe.msRequestFullscreen) {
-        iframe.msRequestFullscreen();
+      if (newTab) {
+        // Open in a new tab (for Discord and other iframe-blocked sites)
+        window.open(encodedUrl, "_blank");
+      } else {
+        // Open in full-screen iframe
+        let iframe = document.getElementById("app-frame");
+        iframe.src = encodedUrl;
+
+        // Request full screen
+        if (iframe.requestFullscreen) {
+          iframe.requestFullscreen();
+        } else if (iframe.mozRequestFullScreen) {
+          iframe.mozRequestFullScreen();
+        } else if (iframe.webkitRequestFullscreen) {
+          iframe.webkitRequestFullscreen();
+        } else if (iframe.msRequestFullscreen) {
+          iframe.msRequestFullscreen();
+        }
+
+        // Show exit button when moving to the top
+        document.addEventListener("mousemove", showExitButton);
       }
-
-      // Show exit button when moving to the top
-      document.addEventListener("mousemove", showExitButton);
     }
 
     function exitFullScreen() {
@@ -68,7 +75,7 @@
     
     <div class="app-list">
       <button onclick="openApp('https://music.youtube.com/')" class="app-card">YouTube Music</button>
-      <button onclick="openApp('https://discord.com/app')" class="app-card">Discord</button>
+      <button onclick="openApp('https://discord.com/app', true)" class="app-card">Discord (New Tab)</button>
       <button onclick="openApp('https://open.spotify.com/')" class="app-card">Spotify</button>
       <button onclick="openApp('https://docs.google.com/')" class="app-card">Google Docs</button>
       <button onclick="openApp('https://drive.google.com/')" class="app-card">Google Drive</button>
