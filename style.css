@@ -459,7 +459,7 @@ body {
   gap: 10px;
 }
 
-/* Apps Page Styles */
+/* App Page Styles */
 .app-list {
   display: flex;
   flex-wrap: wrap;
@@ -471,22 +471,41 @@ body {
 .app-card {
   background-color: var(--button-bg);
   color: var(--button-text) !important;
-  padding: 15px 25px;
-  border-radius: 12px;
+  padding: 12px 20px;
+  border-radius: 10px;
   text-decoration: none;
-  font-size: 20px;
-  font-weight: bold;
+  font-size: 18px;
   text-align: center;
   transition: background 0.3s ease, transform 0.2s ease;
   cursor: pointer;
   border: none;
-  display: inline-block;
-  min-width: 150px;
 }
 
 .app-card:hover {
   background-color: var(--button-hover);
   transform: scale(1.05);
+}
+
+/* Full-Screen Exit Button */
+.fullscreen-button {
+  display: none;
+  position: fixed;
+  top: 5px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: red;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  z-index: 9999;
+}
+
+.fullscreen-button:hover {
+  background-color: darkred;
 }
 
 /* Game Page Styles */
