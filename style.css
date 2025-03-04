@@ -298,11 +298,13 @@ iframe#game-frame {
 }
 
 /* Default Theme */
+/* Default Theme */
 :root {
   --background-color: #1e1e1e;
   --text-color: #f4f4f4;
   --button-bg: #3b3b3b;
   --button-hover: #555;
+  --header-color: #FFFF00;
 }
 
 /* Cyber Theme */
@@ -311,6 +313,7 @@ iframe#game-frame {
   --text-color: cyan;
   --button-bg: #00ffea;
   --button-hover: #00ccbb;
+  --header-color: #00ffff; /* Bright cyan header */
 }
 
 /* Solarized Theme */
@@ -319,6 +322,7 @@ iframe#game-frame {
   --text-color: #657b83;
   --button-bg: #b58900;
   --button-hover: #cb4b16;
+  --header-color: #b58900; /* Warm orange header */
 }
 
 /* Ocean Theme */
@@ -327,6 +331,7 @@ iframe#game-frame {
   --text-color: #a0cfff;
   --button-bg: #007acc;
   --button-hover: #005f99;
+  --header-color: #00aaff; /* Deep ocean blue header */
 }
 
 /* Midnight Theme */
@@ -335,6 +340,7 @@ iframe#game-frame {
   --text-color: #bb86fc;
   --button-bg: #3700b3;
   --button-hover: #6200ea;
+  --header-color: #bb86fc; /* Purple neon header */
 }
 
 /* Forest Theme */
@@ -343,6 +349,7 @@ iframe#game-frame {
   --text-color: #d4e157;
   --button-bg: #558b2f;
   --button-hover: #76ff03;
+  --header-color: #76ff03; /* Bright green header */
 }
 
 /* Retro Theme */
@@ -351,6 +358,7 @@ iframe#game-frame {
   --text-color: #ff3366;
   --button-bg: #ff6600;
   --button-hover: #ff0033;
+  --header-color: #ff0033; /* Neon red header */
 }
 
 /* Apply Theme Variables */
@@ -358,6 +366,16 @@ body {
   background-color: var(--background-color);
   color: var(--text-color);
 }
+
+/* Apply Theme to Header */
+.header {
+  color: var(--header-color);
+  font-size: 48px;
+  font-weight: 600;
+  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+  text-align: center;
+}
+
 
 /* Panic Button */
 .panic-button {
