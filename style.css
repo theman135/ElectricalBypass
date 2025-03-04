@@ -372,20 +372,81 @@ iframe#game-frame {
   border: 1px solid #ccc;
 }
 
-/* Dark Mode */
-.dark-mode {
-  background-color: #121212;
-  color: white;
+/* Default Theme */
+:root {
+  --background-color: #1e1e1e;
+  --text-color: #f4f4f4;
+  --button-bg: #3b3b3b;
+  --button-hover: #555;
 }
 
-.dark-mode .container {
-  background-color: rgba(255, 255, 255, 0.1);
+/* Cyber Theme */
+[data-theme="cyber"] {
+  --background-color: black;
+  --text-color: cyan;
+  --button-bg: #00ffea;
+  --button-hover: #00ccbb;
 }
 
-.dark-mode select, .dark-mode input {
-  background-color: #333;
-  color: white;
+/* Solarized Theme */
+[data-theme="solarized"] {
+  --background-color: #fdf6e3;
+  --text-color: #657b83;
+  --button-bg: #b58900;
+  --button-hover: #cb4b16;
 }
+
+/* Ocean Theme */
+[data-theme="ocean"] {
+  --background-color: #2b3e50;
+  --text-color: #a0cfff;
+  --button-bg: #007acc;
+  --button-hover: #005f99;
+}
+
+/* Apply Theme Variables */
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  font-family: 'Poppins', Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+
+/* Navbar */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(10px);
+  padding: 10px 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.navbar a {
+  text-decoration: none;
+  padding: 12px 18px;
+  border-radius: 10px;
+  background-color: var(--button-bg);
+  color: var(--text-color);
+  transition: background 0.3s ease;
+}
+
+.navbar a:hover {
+  background-color: var(--button-hover);
+}
+
+/* Container */
+.container {
+ 
+
 
 /* Reset Button */
 #reset-settings {
