@@ -508,3 +508,28 @@ iframe#app-frame {
   transform: scale(1.05);
 }
 
+/* Responsive adjustments for screens 768px or smaller */
+@media (max-width: 768px) {
+    body {
+        font-size: 14px;
+        margin: 10px;
+    }
+
+    .container {
+        max-width: 100%;
+        padding: 10px;
+    }
+}
+
+/* Responsive adjustments for screens 480px or smaller */
+@media (max-width: 480px) {
+    body {
+        font-size: 12px;
+        margin: 5px;
+    }
+
+    .container {
+        padding: 5px;
+    }
+}
+
